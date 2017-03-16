@@ -1,7 +1,11 @@
 # filter-keys-object
 
+Filter the keys of an object.
+
 ```javascript
-module.exports = Math.floor(Date.now()/1000);
+module.exports = (object, filterKeyValue) => Object.keys(object).filter(
+    key => filterKeyValue(key, object[key])
+)
 ```
 
 <hr>
